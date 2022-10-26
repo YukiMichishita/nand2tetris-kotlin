@@ -6,27 +6,29 @@ import java.util.*
 
 val whiteSpaces = Regex("""\s*""")
 
-enum class Token(val regex: Regex) {
-    KEYWORD(Regex("class|constructor|function|method|field|static|var|int|char|boolean|void|true|false|null|this|let|do|if|else|while|return")),
-    SYMBOL(Regex("""}|\(|\)|\[|\]|\.|,|;|\+|-|\*|/|&|\||<|>|=|~""" + "|\\{")),
-    INTEGER_CONSTANT(Regex("""\d+""")),
-    STRING_CONSTANT(Regex("\"[^\\n\"]*\"")),
-    IDENTIFIER(Regex("""[a-zA-Z_]\w*"""))
+enum class Token(val type: String, val regex: Regex) {
+    KEYWORD(
+        "keyword",
+        Regex("class|constructor|function|method|field|static|var|int|char|boolean|void|true|false|null|this|let|do|if|else|while|return")
+    ),
+    SYMBOL("symbol", Regex("""}|\(|\)|\[|\]|\.|,|;|\+|-|\*|/|&|\||<|>|=|~""" + "|\\{")),
+    INTEGER_CONSTANT("integerConstant", Regex("""\d+""")),
+    STRING_CONSTANT("stringConstant", Regex("\"[^\\n\"]*\"")),
+    IDENTIFIER("identifier", Regex("""[a-zA-Z_]\w*"""));
+
+    fun matches(source: String): String? {
+        return regex.matchAt(source, 0)?.value
+    }
 }
 
-
-class JackToknizer {
+class JackToknizer(_path: String) {
 
     private var charIndex = 0
     var currentToken = ""
     var currentTokenType = ""
-    private var sourceCode: String = ""
-    private var currentCode: String = ""
-
-    constructor(_path: String) {
-        sourceCode = File(_path).readText().replace(Regex("""/\*.*?\*/|/\*\*.*?\*/|//.*|\r\n|\n|\r"""), "").trimIndent()
-        currentCode = sourceCode
-    }
+    private val sourceCode =
+        File(_path).readText().replace(Regex("""/\*.*?\*/|/\*\*.*?\*/|//.*|\r\n|\n|\r"""), "").trimIndent()
+    private var currentCode = sourceCode
 
     fun hasMoreTokens() = sourceCode.length > charIndex
 
@@ -37,13 +39,15 @@ class JackToknizer {
 
     fun advance() {
         whiteSpaces.find(currentCode)?.let { this.incrementIndex(it.value.length) }
-        println(currentCode)
+
         for (token in Token.values()) {
-            token.regex.matchAt(currentCode, 0)?.let {
-                println("${it.value} $token")
-                currentToken = it.value
-                currentTokenType = token.name.lowercase(Locale.getDefault())
-                this.incrementIndex(it.value.length)
+            token.matches(currentCode)?.let {
+                currentToken = it
+                if (token == Token.STRING_CONSTANT) {
+                    currentToken = currentToken.replace("\"", "")
+                }
+                currentTokenType = token.type
+                this.incrementIndex(it.length)
                 return
             }
         }

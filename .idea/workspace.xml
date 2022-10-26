@@ -5,28 +5,8 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="297adf1c-fd76-4e3a-a845-f09c24ed5e7d" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/kotlinc.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/KotlinJavaRuntime.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/modules.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/nand2tetris_kotlin.iml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/project10/ArrayTest/Main.jack" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/project10/ArrayTest/Main.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/project10/ArrayTest/MainT.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/project10/ArrayTest/MainT_compare.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/project10/ExpressionLessSquare/Main.jack" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/project10/ExpressionLessSquare/Main.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/project10/ExpressionLessSquare/MainT_compare.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/project10/ExpressionLessSquare/Square.jack" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/project10/ExpressionLessSquare/Square.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/project10/ExpressionLessSquare/SquareGame.jack" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/project10/ExpressionLessSquare/SquareGame.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/project10/ExpressionLessSquare/SquareGameT_compare.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/project10/ExpressionLessSquare/SquareT_compare.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/project10/main/kotlin/jackcompiler/JackAnalyzer.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/project10/main/kotlin/jackcompiler/JackToknizer.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/project10/main/kotlin/jackcompiler/JackToknizer.kt" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -37,6 +17,7 @@
     <option name="RECENT_TEMPLATES">
       <list>
         <option value="Kotlin Class" />
+        <option value="JUnit5 Test Class" />
       </list>
     </option>
   </component>
@@ -66,15 +47,22 @@
   </component>
   <component name="PropertiesComponent"><![CDATA[{
   "keyToString": {
+    "Downloaded.Files.Path.Enabled": "false",
+    "Repository.Attach.Annotations": "false",
+    "Repository.Attach.JavaDocs": "false",
+    "Repository.Attach.Sources": "false",
     "RunOnceActivity.OpenProjectViewOnStart": "true",
     "RunOnceActivity.ShowReadmeOnStart": "true",
     "SHARE_PROJECT_CONFIGURATION_FILES": "true",
     "WebServerToolWindowFactoryState": "false",
+    "com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrary": "JUnit5",
+    "com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrarySuperClass.JUnit5": "",
     "last_opened_file_path": "/Users/michishitayuuki/develop/books/nand2tetris_kotlin",
     "node.js.detected.package.eslint": "true",
     "node.js.detected.package.tslint": "true",
     "node.js.selected.package.eslint": "(autodetect)",
     "node.js.selected.package.tslint": "(autodetect)",
+    "nodejs_package_manager_path": "npm",
     "project.structure.last.edited": "Modules",
     "project.structure.proportion": "0.0",
     "project.structure.side.proportion": "0.0",
@@ -91,6 +79,23 @@
       <recent name="$PROJECT_DIR$/src/main" />
       <recent name="$PROJECT_DIR$/src" />
     </key>
+    <key name="CreateTestDialog.Recents.Supers">
+      <recent name="" />
+    </key>
+    <key name="CreateTestDialog.RecentsKey">
+      <recent name="jackcompiler" />
+    </key>
+  </component>
+  <component name="RunManager">
+    <configuration name="Unnamed" type="JetRunConfigurationType" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="jackcompiler.JackAnalyzerKt" />
+      <module name="nand2tetris_kotlin" />
+      <option name="PROGRAM_PARAMETERS" value="src/project10/ArrayTest/Main.jack" />
+      <shortenClasspath name="NONE" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
   </component>
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
   <component name="TaskManager">
@@ -102,7 +107,7 @@
       <updated>1664975086690</updated>
       <workItem from="1664975087854" duration="25235000" />
       <workItem from="1665663946931" duration="707000" />
-      <workItem from="1666784486500" duration="919000" />
+      <workItem from="1666784486500" duration="6022000" />
     </task>
     <servers />
   </component>

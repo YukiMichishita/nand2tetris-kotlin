@@ -2,8 +2,9 @@ package jackcompiler
 
 import java.io.File
 
-fun main(args: Array<String>) {
-    val fileName = readln()
+fun main(args: Array<String>): String {
+    println(args[0])
+    val fileName = args[0]
     val toknizer = JackToknizer(fileName)
 
     val xmlify = { token: String, tokenType: String ->
@@ -23,5 +24,6 @@ fun main(args: Array<String>) {
     outputXml.add("</tokens>")
     val outFile = File(fileName.replace("jack", "xml_"))
     outFile.writeText(outputXml.joinToString(""))
+    return outputXml.joinToString("")
 }
 
